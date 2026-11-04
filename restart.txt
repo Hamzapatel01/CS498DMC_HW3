@@ -1,0 +1,8 @@
+# Terminal 1: Start Flask
+python3 app.py
+
+# Terminal 2: Start Bore tunnel
+~/.cargo/bin/bore local 8000 --to bore.pub
+
+# Terminal 3: Check the public IP
+getent ahostsv4 bore.pub | awk 'NR==1 {print $1}'
